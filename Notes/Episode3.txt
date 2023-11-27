@@ -1,0 +1,32 @@
+When running a new project, search scripts and find what command to run to start
+the project.
+
+JSX and React are different. We can write React without JSX but JSX makes life easier. JSX is also not HTML
+ in JS. It is an HTML-like or XML-like syntax.
+
+ JSX is not valid JS as JS only understands EcmaScript. It is parcel that does the job for us, i.e, the code is 
+ transpiled before it goes to the JS engine. It is done by Babel, under Parcel, that converts JSX into a code 
+ understood by React.
+
+ JSX is transpiled to React.createElement by babel which is converted to a JS object and finally turns into 
+ HTML Element on rendering.To give attributes to JSX, we need to use camelcase. 
+
+Two types of React Components:
+Class based Components - OLD - Use JS Classes
+Functional based Components - NEW - Use JS Functions
+
+Class based Components:
+It is a normal JS function which returns a piece of JSX(JSX Element).
+
+Component Composition:
+Composing a component inside another is called as Component Composition.
+
+We can write js in inside components within curly braces.
+All combinations - React Element inside Element, element in component, component inside element and component
+inside component are possible.
+For react element - {} - as at the end of the day we can place any js in there. We can also call a functional 
+component.
+For react Functional component - </> or <></>
+
+APIs giving malicious data, can run in js on users' systems but JSX escapes these attacks by santizing the data,
+thus avoiding cross-side scripting attacks.

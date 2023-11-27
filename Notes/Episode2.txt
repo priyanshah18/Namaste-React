@@ -1,0 +1,50 @@
+React alone does not make the app fast. We need several other packages to achieve that.
+NPM is a standard repository for all packages, it is the biggest manager. However, it does not stand for
+Node Package Manager.
+package.json is  basically a confiuration for our npm.
+The most important package in our project is a bundler. A bundler bundles/minifies/compresses the code for
+pushing it to production.
+create-react-app uses a web pack behind the scenes. 
+
+There are 2 types of dependencies: 
+Dev dependencies: These are required at the time of development. Parcel is a bundler, 
+does minification and all is done at the time of development. So we specify -D in the installation command,
+we use it as a dev dependency which contains many packages. Gives muscles to out skeleton app.
+Normal dependencies: These are used in production also.
+
+By putting a ^ ahead of the parcel version, it will automatically upgrade to the latest minor update version. 
+If we use a ~, it will upgrade to the latest major version which is not recommended.
+
+package-lock.json keeps a track of the exact version and locks it, while package.json keeps an approximate track
+of the version. package-lock.json keeps a hash to verify that whatever is there on the local(dev) is the same 
+version that is being deployed on production.
+
+package.json is a configuration while node modules are the ones containing the actual files, like a database.
+Node modules give us the code of all the dependencies. Parcel has dependencies, those dependenncies may have 
+more dependencies and so on. These are transitive dependencies.
+
+If you have package.json and package-lock.json, we can recreate all the node modules. Whatever you can regenerate,
+dont put it on git.
+
+We use npm to install a package, while npx is used to execute a package. We specify type="module" to let tell 
+parcel that it is a module, not a normal js file.
+
+Parcerl does:
+->Creates a Dev build
+->Gives a local server
+->Hot Module Replacement
+->File Watching Algorithm - written in C++ - keeps an eye on the code builds again
+->Caching - Faster Builds
+->Image Optimization
+->Minification
+->Bundling
+->Compression
+->Consistent Hashing
+->Code Splitting 
+->Differential Bundling - support older browsers
+->Diagnostics, error handling.
+->Tree Shaking - removes unwanted/unused code for you.
+->Different prod and dev builds
+---Done by parcel-cache(HMR).
+
+Need to remove main:app.js from package.json since it will conflict with index.html as the starting point.
